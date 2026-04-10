@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.viewport-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    border: 8px solid black; 
+    pointer-events: none;
+    width: 0;   
+}
+
+html {
+  background-image: url('https://i.ibb.co/GHnzTJr/6b83f81e8d51fd96d4f4f7d95b00dcfa.jpg');
+  background-repeat: repeat-y;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+
+   html::before {
+      content: "";
+      position: fixed; 
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 8px solid black; 
+      pointer-events: none; 
+      box-sizing: border-box; 
+      z-index: 1000
+    }
+
+body {
+  min-height: 100%;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1200%;
+  background: url('https://i.ibb.co/GHnzTJr/6b83f81e8d51fd96d4f4f7d95b00dcfa.jpg') no-repeat center center;
+  background-size: cover;
+  animation: moveBackground 10s linear infinite, stretchBackground 5s infinite alternate;
+}
+
+.myGif {
+    margin-left: -100px;
+    repeat: repeat-y;
+}
+
+/* Move background left to right */
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Stretch background from small to large and back */
+@keyframes stretchBackground {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.responsive-img {
+    width: 65.4vw;
+  }
+
+  /* Example: Custom styles for small screens */
+  @media (max-width: 600px) {
+  responsive-img {
+      width: 80%;  /* Set image width to 80% of the container */
+      display: block;
+      margin: 0 auto;  /* Center the image */
+    }
+  }
+
+  /* Example: Custom styles for large screens */
+  @media (min-width: 1200px) {
+ responsive-img{
+      width: 50%;  /* Set image width to 50% of the container */
+    }
+  }
+
+div {
+    width: 60vw;
+}
+
+h1 {
+    position: absolute;
+    width: 56%;
+    padding: 2px;
+    z-index: 1000;
+}
+
+.flex-parent-element {
+  margin-top: 0px;
+  display: flex;
+  width: 100%;
+  position: absolute;
+}
+
+.flex-child-element {
+  flex: 0.59;
+  margin: 10px;
+}
+
+.flex-child-element:first-child {
+  margin-right: 20px;
+  flex: 0.35;
+}
+
+/* Navbar attempt 1 */
+
+.navbar {
+    margin-top: 3360px;
+    height: 12vh;
+    width: 100%; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    background-color: #00006c;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 4px;
+    border-bottom: 5px solid #000000; 
+    border-radius: 15px;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    margin-left: -4px;
+    overflow: hidden;
+    background-color: #00006c;
+    color: green;
+    display: flex;
+    float: right;
+    font-size: 17px;
+}
+
+
+.navbar ul li {
+    margin-top: 6vh;
+    float: center;
+    margin-left: 4px;
+    border: 5px solid #000000;
+    align-content: center;
+}
+
+
+.navbar ul li a {
+    display: block;
+    color:  green;
+    text-align: center;
+    align-content: center;
+    padding: 2px 3px;
+    text-decoration: none;
+    height: 100%;
+    transition: background-color 0.3s ease, color 0.3s linear;
+}
+
+
+.navbar ul li a:hover {
+    background-color:  #008000;
+    color: #000000;
+    border-radius: 15px;
+    transform: scale(1.1);  /* Slightly enlarge */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Add shadow for depth */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);  /* Glowing text effect */
+}
+
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #008000;
+    transition: width 1s ease-in-out; /* Sliding underline */
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;  /* Underline slides in */
+}
